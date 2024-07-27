@@ -1,4 +1,5 @@
-##### A very simple chrome launcher
+##### A very simple chrome launcher.
+##### This is a preview build and doesn't offer many features yet.
 
 ![alt text](image.png)
 
