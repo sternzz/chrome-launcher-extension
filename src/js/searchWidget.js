@@ -1,15 +1,35 @@
+import { isOpened } from "./handleModal.js";
+
 const searchWidgetElement = document.querySelector("#search-widget");
 
-const spaceToSearch = () => {
-  document.addEventListener("keydown", (e) => {
-    if (e.code === "Space") {
+let isFocused = false;
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    if (isOpened() === false) {
       searchWidgetElement.focus();
     }
-  });
-};
+    return;
+  }
+});
 
-function executeSearchWidgetComponents() {
-  spaceToSearch();
-}
+searchWidgetElement.addEventListener("focus", (e) => {
+  console.log("Input is focused");
+  isFocused = true;
+});
 
-export default executeSearchWidgetComponents;
+searchWidgetElement.addEventListener("blur", (e) => {
+  console.log("Input is blurred");
+  isFocused = false;
+});
+
+window.document.addEventListener("keydown", (e) => {
+  const searchQuery = String(searchWidgetElement.value);
+  if (isFocused) {
+    if (e.code === "Enter") {
+      if (searchQuery && searchQuery.length > 1) {
+        window.location.href = `https://www.google.com/search?q=${searchQuery}`;
+      }
+    }
+  }
+});
