@@ -1,7 +1,7 @@
 ##### A very simple chrome launcher.
 ##### This is a preview build and doesn't offer any features yet.
 
-![alt text](image.png)
+![Focus! - Google Chrome 10_11_2024 9_45_01 PM](https://github.com/user-attachments/assets/4bc89941-a1c6-45ec-b283-25607e085f94)
 
 ##### USAGE
 
